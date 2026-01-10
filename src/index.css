@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-axion-blue: #0070f3;
+  --color-axion-purple: #7928ca;
+  --color-axion-orange: #ff4d4d;
+  --color-axion-dark: #0f172a;
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-100 text-slate-900 transition-colors duration-500;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-50;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.animate-typing-0 { animation: typing 1s steps(40, end) forwards; width: 0; }
+.animate-typing-1 { animation: typing 1s steps(40, end) 1.5s forwards; width: 0; }
+.animate-typing-2 { animation: typing 1s steps(40, end) 3s forwards; width: 0; }
+.animate-typing-3 { animation: typing 1s steps(40, end) 4.5s forwards; width: 0; }
