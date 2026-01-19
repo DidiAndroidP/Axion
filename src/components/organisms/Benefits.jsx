@@ -11,12 +11,12 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-24 bg-blue-100/50 dark:bg-blue-900/10 border-y border-blue-200/50 dark:border-blue-900/20 transition-colors">
+    <section className="py-24 bg-blue-50 dark:bg-slate-900 border-y border-blue-200/50 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         <div>
           <Text type="span" className="text-axion-orange font-bold uppercase tracking-widest mb-4 inline-block">¿Por qué Axion?</Text>
           <Text type="h2" className="mb-6 dark:text-white">Beneficios reales para tu negocio</Text>
-          <Text type="p" className="dark:text-gray-400">Calidad técnica asegurada para que tu inversión sea sólida a largo plazo.</Text>
+          <Text type="p" className="dark:text-slate-300">Calidad técnica asegurada para que tu inversión sea sólida a largo plazo.</Text>
         </div>
         <div className="grid gap-4">
           {benefits.map((b, i) => <BenefitItem key={i} {...b} />)}

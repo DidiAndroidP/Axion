@@ -22,18 +22,18 @@ const Values = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-24 bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12">
           {values.map((v, i) => (
             <div key={i} className="text-center md:text-left">
               <div className="mb-4 flex justify-center md:justify-start">
-                <div className="w-12 h-12 bg-axion-blue/10 flex items-center justify-center rounded-2xl">
+                <div className="w-12 h-12 bg-axion-blue/10 dark:bg-axion-blue/20 flex items-center justify-center rounded-2xl">
                   <v.icon className="text-axion-blue" size={24} />
                 </div>
               </div>
-              <Text type="h3" className="mb-2">{v.title}</Text>
-              <Text type="p" className="text-base text-gray-500">{v.text}</Text>
+              <Text type="h3" className="mb-2 dark:text-white">{v.title}</Text>
+              <Text type="p" className="text-base text-gray-500 dark:text-slate-400">{v.text}</Text>
             </div>
           ))}
         </div>

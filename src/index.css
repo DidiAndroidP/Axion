@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Configuración de variables de tema */
 @theme {
   --color-axion-blue: #0070f3;
   --color-axion-purple: #7928ca;
@@ -8,18 +9,27 @@
   --font-sans: "Inter", ui-sans-serif, system-ui;
 }
 
+/* IMPORTANTE: Configurar dark mode en Tailwind v4 */
+@variant dark (&:is(.dark *));
+
 html {
   scroll-behavior: smooth;
 }
 
+/* Estilos base para el body */
 body {
-  @apply bg-slate-100 text-slate-900 transition-colors duration-500;
+  background-color: rgb(241 245 249); /* slate-100 */
+  color: rgb(15 23 42); /* slate-900 */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Modo oscuro */
 .dark body {
-  @apply bg-slate-950 text-slate-50;
+  background-color: rgb(2 6 23); /* slate-950 */
+  color: rgb(248 250 252); /* slate-50 */
 }
 
+/* Animación de escritura para las líneas antiguas */
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -29,3 +39,34 @@ body {
 .animate-typing-1 { animation: typing 1s steps(40, end) 1.5s forwards; width: 0; }
 .animate-typing-2 { animation: typing 1s steps(40, end) 3s forwards; width: 0; }
 .animate-typing-3 { animation: typing 1s steps(40, end) 4.5s forwards; width: 0; }
+
+/* Animación de los blobs de fondo */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Transición suave para cambio de tema */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}

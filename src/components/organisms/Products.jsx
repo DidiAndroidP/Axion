@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Layout, Zap, Calendar } from 'lucide-react'; // Cambiamos Cloud por Calendar
+import { ShoppingCart, Layout, Zap, Calendar } from 'lucide-react';
 import Text from '../atoms/Text';
 import ProductModal from '../molecules/ProductModal';
 
@@ -30,7 +30,7 @@ const Products = () => {
       ]
     },
     {
-      title: "Appointment Pro", // Nueva opción de Sistema de Reservas
+      title: "Appointment Pro",
       description: "Sistema de gestión de citas y reservas en tiempo real para negocios de servicios.",
       icon: Calendar,
       tag: "Gestión",
@@ -53,7 +53,7 @@ const Products = () => {
   ];
 
   return (
-    <section id="productos" className="py-20 bg-slate-100 dark:bg-slate-950 transition-colors">
+    <section id="productos" className="py-20 bg-slate-100 dark:bg-slate-900 transition-colors">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <Text type="span" className="text-axion-purple font-bold uppercase tracking-widest mb-2 inline-block">Catálogo</Text>
@@ -62,16 +62,19 @@ const Products = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <div key={index} className="group p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-axion-purple/50 transition-all shadow-sm hover:shadow-xl">
-              <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6">
+            <div 
+              key={index} 
+              className="group p-8 rounded-[2rem] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-axion-purple/50 dark:hover:border-axion-purple transition-all shadow-sm hover:shadow-xl"
+            >
+              <div className="w-12 h-12 bg-slate-50 dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-axion-purple/10 dark:group-hover:bg-axion-purple/20 transition-colors">
                 <product.icon className="text-axion-purple" size={24} />
               </div>
               <Text type="h3" className="text-lg mb-3 dark:text-white">{product.title}</Text>
-              <Text type="p" className="text-sm text-gray-500 mb-6">{product.description}</Text>
+              <Text type="p" className="text-sm text-gray-500 dark:text-slate-400 mb-6">{product.description}</Text>
               
               <button 
                 onClick={() => setSelectedProduct(product)}
-                className="w-full py-3 rounded-xl border-2 border-axion-blue text-axion-blue font-bold text-xs hover:bg-axion-blue hover:text-white transition-all cursor-pointer"
+                className="w-full py-3 rounded-xl border-2 border-axion-blue text-axion-blue dark:border-axion-blue dark:text-axion-blue font-bold text-xs hover:bg-axion-blue hover:text-white dark:hover:bg-axion-blue dark:hover:text-white transition-all cursor-pointer"
               >
                 Ver Demo
               </button>

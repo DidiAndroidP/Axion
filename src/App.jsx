@@ -1,9 +1,12 @@
 import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import AxionPage from './pages/AxionPage';
 
 function App() {
   return (
-    <AxionPage />
+    <ThemeProvider>
+      <AxionPage />
+    </ThemeProvider>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import logoAxion from '../../assets/logo-axion.png';
 import Button from '../atoms/Button';
-// Se eliminó la importación de ThemeToggle
+import ThemeToggle from '../atoms/ThemeToggle';
 
 const Navbar = () => {
   return (
@@ -33,8 +33,9 @@ const Navbar = () => {
             </a>
           </div>
           
-          {/* Controles: Solo el botón de contacto */}
-          <div className="flex items-center gap-1 sm:gap-2">
+          {/* Controles: ThemeToggle y botón de contacto */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <Button 
               variant="outline" 
               href="https://wa.me/5219214899742"
